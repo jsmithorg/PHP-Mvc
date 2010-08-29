@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+
+	RewriteEngine On
+	RewriteBase /~justin/
+ 	DirectoryIndex index.php
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+ 
+ 	#RewriteRule ^/$ Glg/Mvc/Controller/FrontController.php?url=index [L]
+ 	#RewriteRule ^(.*?)\?(.*)$ Glg/Mvc/Controller/FrontController.php?url=$1&qs=$2 [L]
+	RewriteRule ^(.*)$ Glg/Mvc/Controller/FrontController.php?url=$1 [L]
+
+</IfModule>
